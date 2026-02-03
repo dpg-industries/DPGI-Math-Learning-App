@@ -1,0 +1,117 @@
+<style>
+/* ---------- Fullscreen reset ---------- */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+#page, #content, .site, .site-content, .wp-site-blocks, main, .wp-block-group {
+  margin: 0 !important;
+  padding: 0 !important;
+  max-width: none !important;
+}
+
+/* Hide theme header/footer */
+header.wp-block-template-part,
+footer.wp-block-template-part,
+.wp-site-blocks > header,
+.wp-site-blocks > footer {
+  display: none !important;
+}
+
+/* ---------- Hero ---------- */
+.cc-hero {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background: #b9d8ff;
+}
+
+.cc-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---------- UI block (even spacing) ---------- */
+.cc-ui {
+  position: absolute;
+  left: 63%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(42vw, 720px);
+  text-align: center;
+}
+
+/* Title PNG — reduced + breathable */
+.cc-title {
+  width: 100%;
+  max-width: 720px;
+  height: auto;
+  opacity: 0.9;
+  margin-bottom: clamp(32px, 4vw, 48px);
+  display: block;
+}
+
+/* Button — intentionally large, calm */
+.cc-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: clamp(260px, 32vw, 460px);
+  height: clamp(64px, 8vw, 92px);
+
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 16px 46px rgba(30, 80, 150, 0.14);
+
+  text-decoration: none;
+
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: clamp(26px, 3vw, 40px);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  color: rgba(95, 150, 225, 0.95);
+
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.cc-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 22px 60px rgba(30, 80, 150, 0.18);
+}
+
+/* ---------- Responsive refinement ---------- */
+@media (max-width: 900px) {
+  .cc-ui {
+    left: 56%;
+    width: min(72vw, 720px);
+  }
+}
+</style>
+
+<div class="cc-hero">
+  <img
+    class="cc-bg"
+    src="https://curiouschimp.com/wp-content/uploads/2026/02/CuriousChimp-Landing-Page-Concept-1.png"
+    alt="CuriousChimp background"
+  />
+
+  <div class="cc-ui">
+    <img
+      class="cc-title"
+      src="https://curiouschimp.com/wp-content/uploads/2026/02/Untitled-drawing-17.png"
+      alt="Curious Chimp"
+    />
+
+    <a class="cc-cta" href="#" aria-label="Download CuriousChimp">
+      Download
+    </a>
+  </div>
+</div>
