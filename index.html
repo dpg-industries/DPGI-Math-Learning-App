@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Curious Chimp — Explore</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Pacifico&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-bar"></div>
+    <a class="account-link" href="#">Account</a>
+    <h1 class="logo">Curious Chimp</h1>
+  </header>
+
+  <img class="mascot mascot-top-left" src="assets/chimp-red.png" alt="Red chimp mascot" data-placeholder="#e87464" />
+  <img class="mascot mascot-top-right" src="assets/chimp-yellow.png" alt="Yellow chimp mascot" data-placeholder="#f4ce6e" />
+  <img class="mascot mascot-bottom-left" src="assets/chimp-blue.png" alt="Blue chimp mascot" data-placeholder="#78b0dc" />
+  <img class="mascot mascot-bottom-right" src="assets/chimp-green.png" alt="Green chimp mascot" data-placeholder="#8cc6a0" />
+
+  <main class="explore">
+    <section class="stage" aria-label="Explore lessons">
+      <div class="search-wrapper">
+        <label class="search-label" for="searchInput">Search</label>
+        <div class="search-bar">
+          <span class="search-icon" aria-hidden="true">🔍</span>
+          <input
+            id="searchInput"
+            type="search"
+            placeholder="Search gentle curiosities..."
+            autocomplete="off"
+            aria-describedby="searchHelp"
+          />
+        </div>
+        <p id="searchHelp" class="search-help">Type to filter cards by title.</p>
+      </div>
+
+      <div class="carousel-shell">
+        <button class="carousel-control prev" type="button" aria-label="Scroll left">
+          <span aria-hidden="true">‹</span>
+        </button>
+
+        <div class="carousel" tabindex="0" aria-live="polite"></div>
+
+        <button class="carousel-control next" type="button" aria-label="Scroll right">
+          <span aria-hidden="true">›</span>
+        </button>
+      </div>
+
+      <p class="empty-state" role="status" aria-live="polite">Nothing yet. Try a different word.</p>
+    </section>
+  </main>
+
+  <div class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-card" role="document">
+      <button class="modal-close" type="button" aria-label="Close" data-close>×</button>
+      <h2 class="modal-title"></h2>
+      <p class="modal-description"></p>
+      <button class="begin-button" type="button">Begin</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
